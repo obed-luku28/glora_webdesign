@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Glora – Agence de création de sites web</title>
+  <meta name="description"
+    content="Glora crée des sites vitrines, des boutiques en ligne et des interfaces claires qui inspirent confiance à vos clients.">
+  <meta name="theme-color" content="#FFFFFF">
+
+  <!-- Favicon : le logo Glora (G hexagonal blanc sur fond noir) -->
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A0A0A'/%3E%3Cpath d='M19.9 9.25L16 7L8.2 11.5V20.5L16 25L23.8 20.5V16H16.5' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <!-- Police : Inter (graisses 400 et 700 uniquement) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Icônes : Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Logo réutilisable (header + footer) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="logo-glora" viewBox="0 0 32 32">
+      <rect width="32" height="32" rx="7" fill="currentColor" />
+      <path d="M19.9 9.25L16 7L8.2 11.5V20.5L16 25L23.8 20.5V16H16.5" fill="none" stroke="#fff" stroke-width="2.6"
+        stroke-linejoin="round" />
+    </symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a class="brand" href="#accueil" aria-label="Glora – Accueil">
+        <svg class="brand-mark" aria-hidden="true">
+          <use href="#logo-glora" />
+        </svg>
+        <span>Glora</span>
+      </a>
+
+      <nav class="nav" id="menu" aria-label="Navigation principale">
+        <a class="nav-link" href="#services">Services</a>
+        <a class="nav-link" href="#realisations">Réalisations</a>
+        <a class="nav-link" href="#processus">Processus</a>
+        <a class="btn btn-nav" href="#contact">Contact</a>
+      </nav>
+
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu"
+        aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="accueil" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1 id="hero-title">Nous créons des sites web qui inspirent confiance</h1>
+          <p class="hero-lead">Sites vitrines, boutiques en ligne et interfaces claires, conçus avec soin pour que vos
+            clients vous fassent confiance dès la première visite.</p>
+          <a class="btn" href="#contact">Nous contacter</a>
+        </div>
+
+        <!-- Visuel minimaliste : mockup 100 % CSS, aucune image -->
+        <div class="mockup" aria-hidden="true">
+          <div class="mockup-bar"><i></i><i></i><i></i></div>
+          <div class="mockup-body">
+            <div class="mk-line mk-title"></div>
+            <div class="mk-line mk-title mk-short"></div>
+            <div class="mk-line mk-text"></div>
+            <div class="mk-line mk-text mk-mid"></div>
+            <div class="mk-btn"></div>
+            <div class="mk-cards">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SERVICES ========== -->
+    <section class="section section-alt" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <h2 id="services-title">Services</h2>
+          <p>Quatre services pour présenter, vendre et faire durer votre site.</p>
+        </header>
+
+        <div class="grid grid-4">
+          <article class="card reveal">
+            <span class="icon" aria-hidden="true"><i class="fa-solid fa-globe"></i></span>
+            <h3>Création de site vitrine</h3>
+            <p>Un site clair qui présente votre activité et rassure vos futurs clients.</p>
+          </article>
+          <article class="card reveal">
+            <span class="icon" aria-hidden="true"><i class="fa-solid fa-bag-shopping"></i></span>
+            <h3>E-commerce</h3>
+            <p>Une boutique en ligne simple à gérer, pensée pour vendre.</p>
+          </article>
+          <article class="card reveal">
+            <span class="icon" aria-hidden="true"><i class="fa-solid fa-pen-ruler"></i></span>
+            <h3>Design UI/UX</h3>
+            <p>Des interfaces lisibles et agréables, construites autour de vos visiteurs.</p>
+          </article>
+          <article class="card reveal">
+            <span class="icon" aria-hidden="true"><i class="fa-solid fa-screwdriver-wrench"></i></span>
+            <h3>Maintenance et SEO</h3>
+            <p>Mises à jour, sécurité et référencement pour rester visible et fiable.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== RÉALISATIONS ========== -->
+    <section class="section" id="realisations" aria-labelledby="work-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <h2 id="work-title">Réalisations</h2>
+          <p>Quelques projets récents.</p>
+        </header>
+
+        <!--
+          POUR AJOUTER OU MODIFIER UNE RÉALISATION :
+          Indiquez simplement l'URL de votre site dans data-url="https://monsite.com".
+          Le code va automatiquement :
+          1. Récupérer et afficher la capture d'écran du site comme couverture.
+          2. Faire apparaître l'icône Font Awesome au survol du curseur.
+          3. Rediriger vers le site au clic (ouvre dans un nouvel onglet).
+        -->
+        <div class="grid grid-3">
+          <figure class="project reveal" data-url="https://obed-luku28.github.io/bali/">
+            <div class="project-media">
+              <img loading="lazy" alt="Aperçu du site BALI">
+              <a class="project-overlay" href="https://obed-luku28.github.io/bali/" target="_blank"
+                rel="noopener noreferrer" aria-label="Visiter le site BALI avec PUTU">
+                <span class="project-icon-badge" aria-hidden="true"><i
+                    class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </a>
+            </div>
+            <figcaption><strong>BALI</strong><span>avec PUTU</span></figcaption>
+          </figure>
+
+          <figure class="project reveal" data-url="https://stripe.com">
+            <div class="project-media">
+              <img loading="lazy" alt="Aperçu de la boutique Kivu Market">
+              <a class="project-overlay" href="https://stripe.com" target="_blank" rel="noopener noreferrer"
+                aria-label="Visiter le site Kivu Market">
+                <span class="project-icon-badge" aria-hidden="true"><i
+                    class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </a>
+            </div>
+            <figcaption><strong>Kivu Market</strong><span>E-commerce</span></figcaption>
+          </figure>
+
+          <figure class="project reveal" data-url="https://linear.app">
+            <div class="project-media">
+              <img loading="lazy" alt="Aperçu du site Nova Santé">
+              <a class="project-overlay" href="https://linear.app" target="_blank" rel="noopener noreferrer"
+                aria-label="Visiter le site Nova Santé">
+                <span class="project-icon-badge" aria-hidden="true"><i
+                    class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </a>
+            </div>
+            <figcaption><strong>Nova Santé</strong><span>Site vitrine</span></figcaption>
+          </figure>
+
+          <figure class="project reveal" data-url="https://vercel.com">
+            <div class="project-media">
+              <img loading="lazy" alt="Aperçu du portfolio Studio Orbe">
+              <a class="project-overlay" href="https://vercel.com" target="_blank" rel="noopener noreferrer"
+                aria-label="Visiter le site Studio Orbe">
+                <span class="project-icon-badge" aria-hidden="true"><i
+                    class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </a>
+            </div>
+            <figcaption><strong>Studio Orbe</strong><span>Portfolio</span></figcaption>
+          </figure>
+
+          <figure class="project reveal" data-url="https://figma.com">
+            <div class="project-media">
+              <img loading="lazy" alt="Aperçu du site Terra Café">
+              <a class="project-overlay" href="https://figma.com" target="_blank" rel="noopener noreferrer"
+                aria-label="Visiter le site Terra Café">
+                <span class="project-icon-badge" aria-hidden="true"><i
+                    class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </a>
+            </div>
+            <figcaption><strong>Terra Café</strong><span>Site vitrine</span></figcaption>
+          </figure>
+
+          <figure class="project reveal" data-url="https://apple.com">
+            <div class="project-media">
+              <img loading="lazy" alt="Aperçu de l'application Fluxo">
+              <a class="project-overlay" href="https://apple.com" target="_blank" rel="noopener noreferrer"
+                aria-label="Visiter le site Fluxo">
+                <span class="project-icon-badge" aria-hidden="true"><i
+                    class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </a>
+            </div>
+            <figcaption><strong>Fluxo</strong><span>Design UI/UX</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROCESSUS ========== -->
+    <section class="section section-alt" id="processus" aria-labelledby="process-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <h2 id="process-title">Processus</h2>
+          <p>Une méthode simple, en quatre étapes.</p>
+        </header>
+
+        <ol class="grid grid-4 steps">
+          <li class="card reveal">
+            <span class="step-number" aria-hidden="true">1</span>
+            <h3>Brief</h3>
+            <p>Nous écoutons vos objectifs et définissons ensemble le projet.</p>
+          </li>
+          <li class="card reveal">
+            <span class="step-number" aria-hidden="true">2</span>
+            <h3>Design</h3>
+            <p>Nous dessinons les maquettes et les validons avec vous avant de coder.</p>
+          </li>
+          <li class="card reveal">
+            <span class="step-number" aria-hidden="true">3</span>
+            <h3>Développement</h3>
+            <p>Nous construisons un site rapide, adapté à tous les écrans.</p>
+          </li>
+          <li class="card reveal">
+            <span class="step-number" aria-hidden="true">4</span>
+            <h3>Lancement</h3>
+            <p>Nous mettons en ligne, vérifions tout et restons disponibles ensuite.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT (sans formulaire) ========== -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <h2 id="contact-title">Contact</h2>
+          <p>Un projet ? Écrivez-nous directement.</p>
+        </header>
+
+        <div class="contact-list reveal">
+          <!-- WhatsApp : remplacez 243964385955 par votre numéro, sans espace ni « + » -->
+          <a class="contact-row" href="https://wa.me/243964385955" target="_blank" rel="noopener">
+            <span class="icon" aria-hidden="true"><i class="fa-brands fa-whatsapp"></i></span>
+            <span class="contact-text"><small>WhatsApp</small><strong>Écrire sur WhatsApp</strong></span>
+          </a>
+
+          <!-- Email : remplacez [EMAIL] aux deux endroits -->
+          <a class="contact-row" href="mailto:[EMAIL]">
+            <span class="icon" aria-hidden="true"><i class="fa-regular fa-envelope"></i></span>
+            <span class="contact-text"><small>Email</small><strong>[EMAIL]</strong></span>
+          </a>
+        </div>
+
+        <!--
+          Réseaux : remplacez chaque [LIEN_...] par l'adresse complète (https://...).
+          Les réseaux dont le lien contient encore des crochets sont masqués
+          automatiquement (voir script.js), ici et dans le footer.
+        -->
+        <ul class="socials reveal" data-socials>
+          <li data-social><a class="pill" href="[LIEN_INSTAGRAM]" target="_blank" rel="noopener"><i
+                class="fa-brands fa-instagram" aria-hidden="true"></i>Instagram</a></li>
+          <li data-social><a class="pill" href="[LIEN_FACEBOOK]" target="_blank" rel="noopener"><i
+                class="fa-brands fa-facebook-f" aria-hidden="true"></i>Facebook</a></li>
+          <li data-social><a class="pill" href="[LIEN_TIKTOK]" target="_blank" rel="noopener"><i
+                class="fa-brands fa-tiktok" aria-hidden="true"></i>TikTok</a></li>
+          <li data-social><a class="pill" href="[LIEN_LINKEDIN]" target="_blank" rel="noopener"><i
+                class="fa-brands fa-linkedin-in" aria-hidden="true"></i>LinkedIn</a></li>
+          <li data-social><a class="pill" href="[LIEN_CHAÎNE_WHATSAPP]" target="_blank" rel="noopener"><i
+                class="fa-brands fa-whatsapp" aria-hidden="true"></i>Chaîne WhatsApp</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="#accueil" aria-label="Glora – Retour en haut">
+          <svg class="brand-mark" aria-hidden="true">
+            <use href="#logo-glora" />
+          </svg>
+          <span>Glora</span>
+        </a>
+        <p>Des sites web sobres, rapides et fiables.</p>
+      </div>
+
+      <ul class="footer-socials" data-socials>
+        <li data-social><a href="[LIEN_INSTAGRAM]" target="_blank" rel="noopener" aria-label="Instagram"><i
+              class="fa-brands fa-instagram" aria-hidden="true"></i></a></li>
+        <li data-social><a href="[LIEN_FACEBOOK]" target="_blank" rel="noopener" aria-label="Facebook"><i
+              class="fa-brands fa-facebook-f" aria-hidden="true"></i></a></li>
+        <li data-social><a href="[LIEN_TIKTOK]" target="_blank" rel="noopener" aria-label="TikTok"><i
+              class="fa-brands fa-tiktok" aria-hidden="true"></i></a></li>
+        <li data-social><a href="[LIEN_LINKEDIN]" target="_blank" rel="noopener" aria-label="LinkedIn"><i
+              class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a></li>
+        <li data-social><a href="[LIEN_CHAÎNE_WHATSAPP]" target="_blank" rel="noopener" aria-label="Chaîne WhatsApp"><i
+              class="fa-brands fa-whatsapp" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
+    <div class="container footer-legal">© <span id="year">2026</span> Glora. Tous droits réservés.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
