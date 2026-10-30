@@ -4,21 +4,39 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Glora – Agence de création de sites web</title>
+  <title>Glora – Agence de création de sites web à Kinshasa</title>
   <meta name="description"
-    content="Glora crée des sites vitrines, des boutiques en ligne et des interfaces claires qui inspirent confiance à vos clients.">
+    content="Glora crée des sites vitrines, des boutiques en ligne et des interfaces claires qui inspirent confiance à vos clients. Agence web basée à Kinshasa, RDC.">
   <meta name="theme-color" content="#FFFFFF">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Partage Facebook & WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Glora">
+  <meta property="og:title" content="Glora – Agence de création de sites web à Kinshasa">
+  <meta property="og:description"
+    content="Sites vitrines, e-commerce et interfaces épurées qui inspirent confiance. Conception sur mesure, rapide et 100 % adaptée au mobile.">
+  <meta property="og:url" content="https://obed-luku28.github.io/glora_webdesign/">
+  <meta property="og:image" content="https://picsum.photos/seed/glora-og/1200/630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Glora – Agence de création de sites web à Kinshasa">
+  <meta name="twitter:description"
+    content="Sites vitrines, boutiques en ligne et interfaces claires qui inspirent confiance dès la première seconde.">
+  <meta name="twitter:image" content="https://picsum.photos/seed/glora-og/1200/630">
 
   <!-- Favicon : le logo Glora (G hexagonal blanc sur fond noir) -->
   <link rel="icon"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A0A0A'/%3E%3Cpath d='M19.9 9.25L16 7L8.2 11.5V20.5L16 25L23.8 20.5V16H16.5' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linejoin='round'/%3E%3C/svg%3E">
 
-  <!-- Police : Inter (graisses 400 et 700 uniquement) -->
+  <!-- Police : Inter (graisses 400, 500 et 700) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <!-- Icônes : Font Awesome -->
+  <!-- Icônes : Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     crossorigin="anonymous" referrerpolicy="no-referrer">
 
@@ -27,21 +45,21 @@
 
 <body>
 
-  <!-- Logo réutilisable (header + footer) -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <!-- Définition du symbole SVG pour le logo Glora réutilisable -->
+  <svg width="0" height="0" style="position:absolute;display:none;" aria-hidden="true" focusable="false">
     <symbol id="logo-glora" viewBox="0 0 32 32">
       <rect width="32" height="32" rx="7" fill="currentColor" />
-      <path d="M19.9 9.25L16 7L8.2 11.5V20.5L16 25L23.8 20.5V16H16.5" fill="none" stroke="#fff" stroke-width="2.6"
+      <path d="M19.9 9.25L16 7L8.2 11.5V20.5L16 25L23.8 20.5V16H16.5" fill="none" stroke="#FFFFFF" stroke-width="2.6"
         stroke-linejoin="round" />
     </symbol>
   </svg>
 
-  <a class="skip-link" href="#main">Aller au contenu</a>
+  <a class="skip-link" href="#main">Aller au contenu principal</a>
 
   <!-- ========== HEADER ========== -->
   <header class="site-header" id="header">
     <div class="container header-inner">
-      <a class="brand" href="#accueil" aria-label="Glora – Accueil">
+      <a class="brand" href="#accueil" aria-label="Glora – Retour à l'accueil">
         <svg class="brand-mark" aria-hidden="true">
           <use href="#logo-glora" />
         </svg>
@@ -50,13 +68,16 @@
 
       <nav class="nav" id="menu" aria-label="Navigation principale">
         <a class="nav-link" href="#services">Services</a>
+        <a class="nav-link" href="#pourquoi">Pourquoi nous</a>
         <a class="nav-link" href="#realisations">Réalisations</a>
         <a class="nav-link" href="#processus">Processus</a>
+        <a class="nav-link" href="#tarifs">Tarifs</a>
+        <a class="nav-link" href="#faq">FAQ</a>
         <a class="btn btn-nav" href="#contact">Contact</a>
       </nav>
 
       <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu"
-        aria-label="Ouvrir le menu">
+        aria-label="Ouvrir le menu de navigation">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -66,28 +87,94 @@
 
     <!-- ========== HERO ========== -->
     <section class="hero" id="accueil" aria-labelledby="hero-title">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <h1 id="hero-title">Nous créons des sites web qui inspirent confiance</h1>
-          <p class="hero-lead">Sites vitrines, boutiques en ligne et interfaces claires, conçus avec soin pour que vos
-            clients vous fassent confiance dès la première visite.</p>
-          <a class="btn" href="#contact">Nous contacter</a>
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-text reveal">
+            <span class="hero-tag">Agence web &bull; Kinshasa</span>
+            <h1 id="hero-title">Nous créons des sites web qui inspirent confiance</h1>
+            <p class="hero-lead">Sites vitrines, boutiques en ligne et interfaces claires, conçus avec soin pour que vos
+              clients vous fassent confiance dès la première visite.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact">
+                <span>Nous contacter</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+              <a class="btn btn-secondary" href="#realisations">
+                <span>Voir nos réalisations</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Visuel : Mockup CSS combiné Ordinateur + Smartphone en noir et blanc -->
+          <div class="hero-visual reveal" aria-hidden="true">
+            <div class="mockup-duo">
+              <!-- Mockup Ordinateur (Desktop) -->
+              <div class="mockup-desktop">
+                <div class="mockup-desktop-bar">
+                  <div class="mockup-dots">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="mockup-url">glora.agency</div>
+                </div>
+                <div class="mockup-desktop-body">
+                  <div class="mk-nav">
+                    <div class="mk-brand"></div>
+                    <div class="mk-links"><span></span><span></span><span></span></div>
+                  </div>
+                  <div class="mk-hero-sim">
+                    <div class="mk-line mk-title"></div>
+                    <div class="mk-line mk-title mk-short"></div>
+                    <div class="mk-line mk-text"></div>
+                    <div class="mk-line mk-text mk-mid"></div>
+                    <div class="mk-btn"></div>
+                  </div>
+                  <div class="mk-grid">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mockup Téléphone (Mobile) superposé -->
+              <div class="mockup-phone">
+                <div class="phone-speaker"></div>
+                <div class="phone-screen">
+                  <div class="phone-nav">
+                    <div class="phone-dot"></div>
+                    <div class="phone-burger"></div>
+                  </div>
+                  <div class="phone-title"></div>
+                  <div class="phone-title phone-short"></div>
+                  <div class="phone-text"></div>
+                  <div class="phone-text"></div>
+                  <div class="phone-btn"></div>
+                  <div class="phone-card"></div>
+                  <div class="phone-card"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Visuel minimaliste : mockup 100 % CSS, aucune image -->
-        <div class="mockup" aria-hidden="true">
-          <div class="mockup-bar"><i></i><i></i><i></i></div>
-          <div class="mockup-body">
-            <div class="mk-line mk-title"></div>
-            <div class="mk-line mk-title mk-short"></div>
-            <div class="mk-line mk-text"></div>
-            <div class="mk-line mk-text mk-mid"></div>
-            <div class="mk-btn"></div>
-            <div class="mk-cards">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
+        <!-- Chiffres clés animés sous le Hero -->
+        <!-- À REMPLACER : ajustez les valeurs data-target et les textes selon vos chiffres réels -->
+        <div class="stats-band reveal">
+          <div class="stat-card">
+            <div class="stat-number"><span class="counter" data-target="10">0</span>+</div>
+            <div class="stat-label">Projets livrés</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number"><span class="counter" data-target="7">0</span> j</div>
+            <div class="stat-label">Délai moyen de livraison</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number"><span class="counter" data-target="100">0</span>%</div>
+            <div class="stat-label">Sites adaptés au mobile</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number"><i class="fa-solid fa-headset stat-icon" aria-hidden="true"></i></div>
+            <div class="stat-label">Support réactif après lancement</div>
           </div>
         </div>
       </div>
@@ -97,157 +184,517 @@
     <section class="section section-alt" id="services" aria-labelledby="services-title">
       <div class="container">
         <header class="section-head reveal">
+          <span class="section-tag">Expertises</span>
           <h2 id="services-title">Services</h2>
-          <p>Quatre services pour présenter, vendre et faire durer votre site.</p>
+          <p>Quatre services essentiels pour présenter votre activité, vendre vos produits et pérenniser votre présence
+            en ligne.</p>
         </header>
 
         <div class="grid grid-4">
-          <article class="card reveal">
-            <span class="icon" aria-hidden="true"><i class="fa-solid fa-globe"></i></span>
+          <article class="card service-card reveal">
+            <div class="icon-box" aria-hidden="true">
+              <i class="fa-solid fa-globe"></i>
+            </div>
             <h3>Création de site vitrine</h3>
-            <p>Un site clair qui présente votre activité et rassure vos futurs clients.</p>
+            <p>Un site clair, élégant et moderne qui présente votre savoir-faire et rassure vos futurs clients dès les
+              premières secondes.</p>
           </article>
-          <article class="card reveal">
-            <span class="icon" aria-hidden="true"><i class="fa-solid fa-bag-shopping"></i></span>
+
+          <article class="card service-card reveal">
+            <div class="icon-box" aria-hidden="true">
+              <i class="fa-solid fa-bag-shopping"></i>
+            </div>
             <h3>E-commerce</h3>
-            <p>Une boutique en ligne simple à gérer, pensée pour vendre.</p>
+            <p>Une boutique en ligne simple à gérer, sécurisée et optimisée pour transformer vos visiteurs en acheteurs
+              réguliers.</p>
           </article>
-          <article class="card reveal">
-            <span class="icon" aria-hidden="true"><i class="fa-solid fa-pen-ruler"></i></span>
+
+          <article class="card service-card reveal">
+            <div class="icon-box" aria-hidden="true">
+              <i class="fa-solid fa-pen-ruler"></i>
+            </div>
             <h3>Design UI/UX</h3>
-            <p>Des interfaces lisibles et agréables, construites autour de vos visiteurs.</p>
+            <p>Des interfaces soignées, lisibles et intuitives, conçues pour offrir un confort de navigation optimal sur
+              smartphone et ordinateur.</p>
           </article>
-          <article class="card reveal">
-            <span class="icon" aria-hidden="true"><i class="fa-solid fa-screwdriver-wrench"></i></span>
+
+          <article class="card service-card reveal">
+            <div class="icon-box" aria-hidden="true">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
             <h3>Maintenance et SEO</h3>
-            <p>Mises à jour, sécurité et référencement pour rester visible et fiable.</p>
+            <p>Mises à jour techniques, sécurité, rapidité et référencement Google pour rester visible, fiable et toujours
+              disponible.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== POURQUOI GLORA ========== -->
+    <section class="section" id="pourquoi" aria-labelledby="pourquoi-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-tag">Notre valeur ajoutée</span>
+          <h2 id="pourquoi-title">Pourquoi choisir Glora</h2>
+          <p>Une méthode de travail directe et pragmatique, pensée pour répondre aux réalités des entreprises et
+            entrepreneurs.</p>
+        </header>
+
+        <div class="grid grid-4">
+          <div class="card why-card reveal">
+            <div class="icon-box" aria-hidden="true">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <h3>Rapidité d'exécution</h3>
+            <p>Votre site est opérationnel en 7 à 10 jours en moyenne, sans compromis sur la rigueur ni sur la qualité des
+              finitions.</p>
+          </div>
+
+          <div class="card why-card reveal">
+            <div class="icon-box" aria-hidden="true">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <h3>Design clair & percutant</h3>
+            <p>Aucun artifice inutile. Nous concevons une identité sobre qui met en avant votre proposition de valeur et
+              crédibilise votre image.</p>
+          </div>
+
+          <div class="card why-card reveal">
+            <div class="icon-box" aria-hidden="true">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+            </div>
+            <h3>100 % adapté au mobile</h3>
+            <p>La grande majorité de vos prospects naviguent sur téléphone. Tous nos sites sont ultra-rapides et légers,
+              même avec une connexion modeste.</p>
+          </div>
+
+          <div class="card why-card reveal">
+            <div class="icon-box" aria-hidden="true">
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <h3>Accompagnement par WhatsApp</h3>
+            <p>Un contact direct et instantané pour échanger, valider chaque étape et répondre à vos questions en toute
+              simplicité.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ========== RÉALISATIONS ========== -->
-    <section class="section" id="realisations" aria-labelledby="work-title">
+    <section class="section section-alt" id="realisations" aria-labelledby="work-title">
       <div class="container">
         <header class="section-head reveal">
+          <span class="section-tag">Portfolio</span>
           <h2 id="work-title">Réalisations</h2>
-          <p>Quelques projets récents.</p>
+          <p>Découvrez une sélection de sites web conçus pour nos clients ainsi que nos concepts de démonstration.</p>
         </header>
 
         <!--
-          POUR AJOUTER OU MODIFIER UNE RÉALISATION :
-          Indiquez simplement l'URL de votre site dans data-url="https://monsite.com".
-          Le code va automatiquement :
-          1. Récupérer et afficher la capture d'écran du site comme couverture.
-          2. Faire apparaître l'icône Font Awesome au survol du curseur.
-          3. Rediriger vers le site au clic (ouvre dans un nouvel onglet).
+          GUIDE POUR AJOUTER OU MODIFIER VOS RÉALISATIONS :
+          - Pour un site réel : renseignez data-url="https://monsite.com". L'image de couverture sera récupérée automatiquement
+            et un bouton "Voir le projet" permettra de le visiter au survol.
+          - Pour un projet démo : retirez data-url ou laissez la classe .project-demo.
         -->
         <div class="grid grid-3">
+
+          <!-- Projet réel 1 : BALI avec PUTU -->
           <figure class="project reveal" data-url="https://obed-luku28.github.io/bali/">
-            <div class="project-media">
-              <img loading="lazy" alt="Aperçu du site BALI">
-              <a class="project-overlay" href="https://obed-luku28.github.io/bali/" target="_blank"
-                rel="noopener noreferrer" aria-label="Visiter le site BALI avec PUTU">
-                <span class="project-icon-badge" aria-hidden="true"><i
-                    class="fa-solid fa-arrow-up-right-from-square"></i></span>
-              </a>
+            <div class="browser-frame">
+              <div class="browser-frame-bar">
+                <div class="browser-dots"><span></span><span></span><span></span></div>
+                <div class="browser-address">obed-luku28.github.io/bali</div>
+              </div>
+              <div class="project-media">
+                <img loading="lazy" alt="Aperçu du site BALI avec PUTU">
+                <a class="project-overlay" href="https://obed-luku28.github.io/bali/" target="_blank"
+                  rel="noopener noreferrer" aria-label="Visiter le site BALI avec PUTU (nouvel onglet)">
+                  <span class="project-btn-view">
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                    <span>Voir le projet</span>
+                  </span>
+                </a>
+              </div>
             </div>
-            <figcaption><strong>BALI</strong><span>avec PUTU</span></figcaption>
+            <figcaption>
+              <div class="project-info">
+                <strong>BALI</strong>
+                <p>avec PUTU</p>
+              </div>
+              <div class="project-badges">
+                <span class="badge">Site vitrine</span>
+              </div>
+            </figcaption>
           </figure>
 
+          <!-- Projet réel 2 : Immo -->
           <figure class="project reveal" data-url="https://obed-luku28.github.io/immo/">
-            <div class="project-media">
-              <img loading="lazy" alt="Aperçu de la boutique Kivu Market">
-              <a class="project-overlay" href="https://obed-luku28.github.io/immo/" target="_blank"
-                rel="noopener noreferrer" aria-label="Visiter le site Kivu Market">
-                <span class="project-icon-badge" aria-hidden="true"><i
-                    class="fa-solid fa-arrow-up-right-from-square"></i></span>
-              </a>
+            <div class="browser-frame">
+              <div class="browser-frame-bar">
+                <div class="browser-dots"><span></span><span></span><span></span></div>
+                <div class="browser-address">obed-luku28.github.io/immo</div>
+              </div>
+              <div class="project-media">
+                <img loading="lazy" alt="Aperçu du site immobilier Immo">
+                <a class="project-overlay" href="https://obed-luku28.github.io/immo/" target="_blank"
+                  rel="noopener noreferrer" aria-label="Visiter le site Immo (nouvel onglet)">
+                  <span class="project-btn-view">
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                    <span>Voir le projet</span>
+                  </span>
+                </a>
+              </div>
             </div>
-            <figcaption><strong>immo</strong><span></span></figcaption>
+            <figcaption>
+              <div class="project-info">
+                <strong>Immo</strong>
+                <p>Agence immobilière</p>
+              </div>
+              <div class="project-badges">
+                <span class="badge">Immobilier</span>
+              </div>
+            </figcaption>
           </figure>
 
-          <figure class="project reveal" data-url="https://linear.app">
-            <div class="project-media">
-              <img loading="lazy" alt="Aperçu du site Nova Santé">
-              <a class="project-overlay" href="https://linear.app" target="_blank" rel="noopener noreferrer"
-                aria-label="Visiter le site Nova Santé">
-                <span class="project-icon-badge" aria-hidden="true"><i
-                    class="fa-solid fa-arrow-up-right-from-square"></i></span>
-              </a>
+          <!-- Projet Démo : Kivu Market -->
+          <figure class="project project-demo reveal">
+            <div class="browser-frame">
+              <div class="browser-frame-bar">
+                <div class="browser-dots"><span></span><span></span><span></span></div>
+                <div class="browser-address">kivumarket.demo</div>
+              </div>
+              <div class="project-media demo-media">
+                <div class="demo-preview">
+                  <div class="demo-icon"><i class="fa-solid fa-bag-shopping" aria-hidden="true"></i></div>
+                  <span class="demo-title">Kivu Market</span>
+                  <span class="demo-sub">Boutique en ligne moderne</span>
+                </div>
+              </div>
             </div>
-            <figcaption><strong>Nova Santé</strong><span>Site vitrine</span></figcaption>
+            <figcaption>
+              <div class="project-info">
+                <strong>Kivu Market</strong>
+                <p>Boutique d'artisanat & produits locaux</p>
+              </div>
+              <div class="project-badges">
+                <span class="badge">E-commerce</span>
+                <span class="badge badge-subtle">Projet de démonstration</span>
+              </div>
+            </figcaption>
           </figure>
 
-          <figure class="project reveal" data-url="https://vercel.com">
-            <div class="project-media">
-              <img loading="lazy" alt="Aperçu du portfolio Studio Orbe">
-              <a class="project-overlay" href="https://vercel.com" target="_blank" rel="noopener noreferrer"
-                aria-label="Visiter le site Studio Orbe">
-                <span class="project-icon-badge" aria-hidden="true"><i
-                    class="fa-solid fa-arrow-up-right-from-square"></i></span>
-              </a>
-            </div>
-            <figcaption><strong>Studio Orbe</strong><span>Portfolio</span></figcaption>
-          </figure>
-
-          <figure class="project reveal" data-url="https://figma.com">
-            <div class="project-media">
-              <img loading="lazy" alt="Aperçu du site Terra Café">
-              <a class="project-overlay" href="https://figma.com" target="_blank" rel="noopener noreferrer"
-                aria-label="Visiter le site Terra Café">
-                <span class="project-icon-badge" aria-hidden="true"><i
-                    class="fa-solid fa-arrow-up-right-from-square"></i></span>
-              </a>
-            </div>
-            <figcaption><strong>Terra Café</strong><span>Site vitrine</span></figcaption>
-          </figure>
-
-          <figure class="project reveal" data-url="https://apple.com">
-            <div class="project-media">
-              <img loading="lazy" alt="Aperçu de l'application Fluxo">
-              <a class="project-overlay" href="https://apple.com" target="_blank" rel="noopener noreferrer"
-                aria-label="Visiter le site Fluxo">
-                <span class="project-icon-badge" aria-hidden="true"><i
-                    class="fa-solid fa-arrow-up-right-from-square"></i></span>
-              </a>
-            </div>
-            <figcaption><strong>Fluxo</strong><span>Design UI/UX</span></figcaption>
-          </figure>
         </div>
       </div>
     </section>
 
     <!-- ========== PROCESSUS ========== -->
-    <section class="section section-alt" id="processus" aria-labelledby="process-title">
+    <section class="section" id="processus" aria-labelledby="process-title">
       <div class="container">
         <header class="section-head reveal">
-          <h2 id="process-title">Processus</h2>
-          <p>Une méthode simple, en quatre étapes.</p>
+          <span class="section-tag">Méthodologie</span>
+          <h2 id="process-title">Notre processus</h2>
+          <p>Une démarche structurée en quatre étapes claires, de la première discussion jusqu'au lancement en ligne.</p>
         </header>
 
-        <ol class="grid grid-4 steps">
-          <li class="card reveal">
-            <span class="step-number" aria-hidden="true">1</span>
-            <h3>Brief</h3>
-            <p>Nous écoutons vos objectifs et définissons ensemble le projet.</p>
+        <ol class="process-grid">
+          <!-- Étape 1 -->
+          <li class="process-step reveal">
+            <div class="step-header">
+              <span class="step-num" aria-hidden="true">01</span>
+              <div class="step-icon-box" aria-hidden="true">
+                <i class="fa-solid fa-clipboard-list"></i>
+              </div>
+            </div>
+            <h3>Brief & Objectifs</h3>
+            <p>Nous échangeons sur vos attentes, vos services et vos clients pour définir l'arborescence et le contenu du
+              site.</p>
+            <div class="step-arrow" aria-hidden="true">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
           </li>
-          <li class="card reveal">
-            <span class="step-number" aria-hidden="true">2</span>
-            <h3>Design</h3>
-            <p>Nous dessinons les maquettes et les validons avec vous avant de coder.</p>
+
+          <!-- Étape 2 -->
+          <li class="process-step reveal">
+            <div class="step-header">
+              <span class="step-num" aria-hidden="true">02</span>
+              <div class="step-icon-box" aria-hidden="true">
+                <i class="fa-solid fa-pen-ruler"></i>
+              </div>
+            </div>
+            <h3>Design & Maquettes</h3>
+            <p>Nous concevons l'interface graphique sur mesure. Vous visualisez et validez le rendu avant tout
+              développement.</p>
+            <div class="step-arrow" aria-hidden="true">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
           </li>
-          <li class="card reveal">
-            <span class="step-number" aria-hidden="true">3</span>
+
+          <!-- Étape 3 -->
+          <li class="process-step reveal">
+            <div class="step-header">
+              <span class="step-num" aria-hidden="true">03</span>
+              <div class="step-icon-box" aria-hidden="true">
+                <i class="fa-solid fa-code"></i>
+              </div>
+            </div>
             <h3>Développement</h3>
-            <p>Nous construisons un site rapide, adapté à tous les écrans.</p>
+            <p>Nous codons un site propre, sécurisé et rapide, parfaitement adapté aux écrans de smartphones et
+              d'ordinateurs.</p>
+            <div class="step-arrow" aria-hidden="true">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
           </li>
-          <li class="card reveal">
-            <span class="step-number" aria-hidden="true">4</span>
-            <h3>Lancement</h3>
-            <p>Nous mettons en ligne, vérifions tout et restons disponibles ensuite.</p>
+
+          <!-- Étape 4 -->
+          <li class="process-step reveal">
+            <div class="step-header">
+              <span class="step-num" aria-hidden="true">04</span>
+              <div class="step-icon-box" aria-hidden="true">
+                <i class="fa-solid fa-rocket"></i>
+              </div>
+            </div>
+            <h3>Lancement & Suivi</h3>
+            <p>Nous déployons votre site en ligne, vérifions chaque détail technique et restons disponibles pour vous
+              accompagner.</p>
           </li>
         </ol>
+      </div>
+    </section>
+
+    <!-- ========== TARIFS ========== -->
+    <section class="section section-alt" id="tarifs" aria-labelledby="tarifs-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-tag">Investissement</span>
+          <h2 id="tarifs-title">Tarifs clairs & transparents</h2>
+          <p>Des formules adaptées à chaque étape de développement de votre entreprise, sans coûts cachés.</p>
+        </header>
+
+        <!-- À REMPLACER : ajustez les montants indicatifs ci-dessous selon votre grille tarifaire -->
+        <div class="grid grid-3 pricing-grid">
+
+          <!-- Formule 1 : Vitrine -->
+          <article class="card pricing-card reveal">
+            <div class="pricing-head">
+              <h3>Vitrine</h3>
+              <p class="pricing-desc">Idéal pour présenter votre activité avec professionnalisme et recevoir des contacts.</p>
+              <div class="pricing-price">
+                <span class="price-from">À partir de</span>
+                <span class="price-val">250 $</span>
+              </div>
+            </div>
+            <ul class="pricing-features">
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Site vitrine 1 à 4 sections / pages</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> 100 % adapté smartphones & PC</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Bouton WhatsApp & Contact direct</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Référencement de base (Google SEO)</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Livraison en 7 jours ouvrés</li>
+            </ul>
+            <div class="pricing-foot">
+              <a class="btn btn-secondary btn-full"
+                href="https://wa.me/243964385955?text=Bonjour%20Glora%2C%20je%20souhaite%20commander%20la%20formule%20Vitrine."
+                target="_blank" rel="noopener">
+                <span>Commander cette formule</span>
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Formule 2 : E-commerce (Populaire / Mise en avant) -->
+          <article class="card pricing-card pricing-featured reveal">
+            <div class="featured-badge">Populaire</div>
+            <div class="pricing-head">
+              <h3>E-commerce</h3>
+              <p class="pricing-desc">Pensé pour vendre vos produits et recevoir vos commandes directement sur WhatsApp.</p>
+              <div class="pricing-price">
+                <span class="price-from">À partir de</span>
+                <span class="price-val">450 $</span>
+              </div>
+            </div>
+            <ul class="pricing-features">
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Catalogue produits avec panier</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Envoi direct des commandes sur WhatsApp</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Fiches produits soignées & galerie photos</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Conception orientée conversion mobile</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Formation rapide pour gérer vos produits</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Livraison en 10 à 14 jours ouvrés</li>
+            </ul>
+            <div class="pricing-foot">
+              <a class="btn btn-primary btn-full"
+                href="https://wa.me/243964385955?text=Bonjour%20Glora%2C%20je%20souhaite%20commander%20la%20formule%20E-commerce."
+                target="_blank" rel="noopener">
+                <span>Commander cette formule</span>
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Formule 3 : Sur mesure -->
+          <article class="card pricing-card reveal">
+            <div class="pricing-head">
+              <h3>Sur mesure</h3>
+              <p class="pricing-desc">Pour les entreprises ayant des exigences particulières, portails ou intégrations avancées.</p>
+              <div class="pricing-price">
+                <span class="price-from">Étude personnalisée</span>
+                <span class="price-val">Sur devis</span>
+              </div>
+            </div>
+            <ul class="pricing-features">
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Architecture et design 100 % sur mesure</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Fonctionnalités et formulaires avancés</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Intégration d'outils tiers ou bases de données</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Performance, rapidité & sécurité maximales</li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> Accompagnement et support prioritaire</li>
+            </ul>
+            <div class="pricing-foot">
+              <a class="btn btn-secondary btn-full"
+                href="https://wa.me/243964385955?text=Bonjour%20Glora%2C%20je%20souhaite%20un%20devis%20pour%20un%20projet%20sur%20mesure."
+                target="_blank" rel="noopener">
+                <span>Demander un devis</span>
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TÉMOIGNAGES ========== -->
+    <section class="section" id="temoignages" aria-labelledby="temoignages-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-tag">Avis clients</span>
+          <h2 id="temoignages-title">Ce que nos clients disent</h2>
+          <p>La confiance de nos partenaires et la qualité de nos livraisons sont notre plus belle réussite.</p>
+        </header>
+
+        <!-- À REMPLACER : mettez vos vrais témoignages clients ici quand vous en aurez -->
+        <div class="grid grid-3">
+          <article class="card testimonial-card reveal">
+            <div class="testimonial-stars" aria-label="Note 5 sur 5">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+            </div>
+            <p class="testimonial-quote">« Glora a parfaitement compris nos besoins dès le départ. Notre site a été livré
+              en une semaine seulement et nos clients nous félicitent pour la clarté du design. »</p>
+            <div class="testimonial-author">
+              <strong>Putu M.</strong>
+              <span>Fondateur, BALI</span>
+            </div>
+          </article>
+
+          <article class="card testimonial-card reveal">
+            <div class="testimonial-stars" aria-label="Note 5 sur 5">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+            </div>
+            <p class="testimonial-quote">« La communication via WhatsApp était fluide et efficace. Pas de perte de temps,
+              des explications limpides et un site ultra-rapide sur smartphone. Je recommande à 100 %. »</p>
+            <div class="testimonial-author">
+              <strong>Patrick K.</strong>
+              <span>Directeur, Agence Immo</span>
+            </div>
+          </article>
+
+          <article class="card testimonial-card reveal">
+            <div class="testimonial-stars" aria-label="Note 5 sur 5">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+            </div>
+            <p class="testimonial-quote">« Travail soigné, sobre et très professionnel. Le site reflète exactement le
+              sérieux que nous souhaitions dégager auprès de nos partenaires institutionnels. »</p>
+            <div class="testimonial-author">
+              <strong>Sylvie B.</strong>
+              <span>Consultante d'affaires, Kinshasa</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section class="section section-alt" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-tag">Questions fréquentes</span>
+          <h2 id="faq-title">Foire aux questions</h2>
+          <p>Toutes les réponses à vos interrogations avant de commencer votre projet avec nous.</p>
+        </header>
+
+        <div class="faq-accordion reveal">
+          <!-- Question 1 -->
+          <details class="faq-item" open>
+            <summary class="faq-question">
+              <span>Quel est le délai moyen pour créer mon site web ?</span>
+              <span class="faq-icon" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+            </summary>
+            <div class="faq-answer">
+              <p>Pour un site vitrine, comptez en moyenne entre <strong>7 et 10 jours ouvrés</strong> à partir de la
+                validation des éléments de contenu. Pour une boutique e-commerce ou un projet avec des fonctionnalités
+                spécifiques, le délai se situe généralement entre 10 et 20 jours ouvrés.</p>
+            </div>
+          </details>
+
+          <!-- Question 2 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Comment s'effectuent les paiements ?</span>
+              <span class="faq-icon" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+            </summary>
+            <div class="faq-answer">
+              <p>Le règlement se fait en deux étapes : <strong>50 % d'acompte</strong> au lancement des travaux (après
+                validation du brief), et le solde de <strong>50 % à la livraison finale</strong> une fois que vous avez
+                validé le site en ligne. Nous acceptons les moyens de paiement locaux et internationaux courants.</p>
+            </div>
+          </details>
+
+          <!-- Question 3 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Vous occupez-vous du nom de domaine et de l'hébergement ?</span>
+              <span class="faq-icon" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+            </summary>
+            <div class="faq-answer">
+              <p>Oui, nous nous occupons de toute la configuration technique : choix et réservation de votre nom de domaine
+                (en .com, .cd, etc.), installation d'un hébergement haute disponibilité et sécurisation complète avec un
+                certificat SSL (HTTPS).</p>
+            </div>
+          </details>
+
+          <!-- Question 4 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Puis-je modifier mon site après la livraison ?</span>
+              <span class="faq-icon" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+            </summary>
+            <div class="faq-answer">
+              <p>Tout à fait. Nous concevons nos sites pour qu'ils soient pérennes et simples à actualiser. Nous vous
+                guidons lors de la livraison pour vous expliquer comment gérer vos textes et produits facilement.</p>
+            </div>
+          </details>
+
+          <!-- Question 5 -->
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Proposez-vous une assistance ou une maintenance après le lancement ?</span>
+              <span class="faq-icon" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+            </summary>
+            <div class="faq-answer">
+              <p>Oui. Une période de garantie et de support technique est systématiquement incluse après la mise en ligne
+                pour vérifier que tout fonctionne à merveille. Nous proposons aussi des formules de suivi mensuel pour vos
+                mises à jour régulières.</p>
+            </div>
+          </details>
+        </div>
       </div>
     </section>
 
@@ -255,74 +702,122 @@
     <section class="section" id="contact" aria-labelledby="contact-title">
       <div class="container">
         <header class="section-head reveal">
-          <h2 id="contact-title">Contact</h2>
-          <p>Un projet ? Écrivez-nous directement.</p>
+          <span class="section-tag">Échange direct</span>
+          <h2 id="contact-title">Contactez-nous</h2>
+          <p>Un projet à lancer ou une question ? Écrivez-nous directement. Nous vous répondons avec plaisir en moins de
+            24h.</p>
         </header>
 
-        <div class="contact-list reveal">
-          <!-- WhatsApp : remplacez 243964385955 par votre numéro, sans espace ni « + » -->
-          <a class="contact-row" href="https://wa.me/243964385955" target="_blank" rel="noopener">
-            <span class="icon" aria-hidden="true"><i class="fa-brands fa-whatsapp"></i></span>
-            <span class="contact-text"><small>WhatsApp</small><strong>Écrire sur WhatsApp</strong></span>
+        <div class="contact-grid">
+          <!-- WhatsApp -->
+          <a class="contact-card reveal" href="https://wa.me/243964385955" target="_blank" rel="noopener">
+            <div class="contact-icon" aria-hidden="true">
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <div class="contact-details">
+              <small>WhatsApp direct</small>
+              <strong>+243 964 385 955</strong>
+              <span>Échange instantané et devis rapide</span>
+            </div>
+            <span class="contact-action" aria-hidden="true">
+              <i class="fa-solid fa-arrow-right"></i>
+            </span>
           </a>
 
-          <!-- Email : remplacez [EMAIL] aux deux endroits -->
-          <a class="contact-row" href="mailto:[EMAIL]">
-            <span class="icon" aria-hidden="true"><i class="fa-regular fa-envelope"></i></span>
-            <span class="contact-text"><small>Email</small><strong>glora.digital.web@gmail.com</strong></span>
+          <!-- Email -->
+          <a class="contact-card reveal" href="mailto:glora.digital.web@gmail.com">
+            <div class="contact-icon" aria-hidden="true">
+              <i class="fa-regular fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <small>Email</small>
+              <strong>glora.digital.web@gmail.com</strong>
+              <span>Pour nous envoyer vos briefs détaillés</span>
+            </div>
+            <span class="contact-action" aria-hidden="true">
+              <i class="fa-solid fa-arrow-right"></i>
+            </span>
           </a>
         </div>
 
-        <!--
-          Réseaux : remplacez chaque [LIEN_...] par l'adresse complète (https://...).
-          Les réseaux dont le lien contient encore des crochets sont masqués
-          automatiquement (voir script.js), ici et dans le footer.
-        -->
-        <ul class="socials reveal" data-socials>
-          <li data-social><a class="pill"
-              href="https://www.instagram.com/glora_digital?vrfl=MWt3dXJkZW9keDNqag%3D%3D&utm_source=qr" target="_blank"
-              rel="noopener"><i class="fa-brands fa-instagram" aria-hidden="true"></i>Instagram</a></li>
-          <li data-social><a class="pill" href="https://www.facebook.com/share/1LdTZngsgr/?mibextid=wwXIfr"
-              target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i>Facebook</a></li>
-          <li data-social><a class="pill" href="[LIEN_TIKTOK]" target="_blank" rel="noopener"><i
-                class="fa-brands fa-tiktok" aria-hidden="true"></i>TikTok</a></li>
-          <li data-social><a class="pill" href="[LIEN_LINKEDIN]" target="_blank" rel="noopener"><i
-                class="fa-brands fa-linkedin-in" aria-hidden="true"></i>LinkedIn</a></li>
-          <li data-social><a class="pill" href="[LIEN_CHAÎNE_WHATSAPP]" target="_blank" rel="noopener"><i
-                class="fa-brands fa-whatsapp" aria-hidden="true"></i>Chaîne WhatsApp</a></li>
-        </ul>
+        <!-- Réseaux sociaux affichés uniquement ici (pas en double dans le footer) -->
+        <div class="contact-socials-wrap reveal">
+          <span class="socials-label">Suivez-nous sur les réseaux sociaux :</span>
+          <div class="socials-list">
+            <a class="pill"
+              href="https://www.instagram.com/glora_digital?vrfl=MWt3dXJkZW9keDNqag%3D%3D&utm_source=qr"
+              target="_blank" rel="noopener" aria-label="Visiter notre page Instagram @glora_digital">
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+              <span>Instagram (@glora_digital)</span>
+            </a>
+            <a class="pill" href="https://www.facebook.com/share/1LdTZngsgr/?mibextid=wwXIfr" target="_blank"
+              rel="noopener" aria-label="Visiter notre page Facebook Glora">
+              <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+              <span>Facebook</span>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
+
+    <!-- ========== BANDEAU FINAL CTA ========== -->
+    <section class="cta-banner reveal" aria-labelledby="cta-title">
+      <div class="container cta-banner-inner">
+        <div class="cta-content">
+          <h2 id="cta-title">Prêt à lancer votre site web ?</h2>
+          <p>Discutons de vos objectifs dès aujourd'hui et obtenez une proposition claire et adaptée en quelques heures.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-cta"
+            href="https://wa.me/243964385955?text=Bonjour%20Glora%2C%20je%20suis%20pr%C3%AAt%20%C3%A0%20lancer%20mon%20site%20web."
+            target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+            <span>Démarrer sur WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- ========== FOOTER ========== -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <a class="brand" href="#accueil" aria-label="Glora – Retour en haut">
+        <a class="brand" href="#accueil" aria-label="Glora – Retour en haut de page">
           <svg class="brand-mark" aria-hidden="true">
             <use href="#logo-glora" />
           </svg>
           <span>Glora</span>
         </a>
-        <p>Des sites web sobres, rapides et fiables.</p>
+        <p>Des sites web sobres, rapides et fiables pour les entreprises à Kinshasa et partout dans le monde.</p>
       </div>
 
-      <ul class="footer-socials" data-socials>
-        <li data-social><a href="[LIEN_INSTAGRAM]" target="_blank" rel="noopener" aria-label="Instagram"><i
-              class="fa-brands fa-instagram" aria-hidden="true"></i></a></li>
-        <li data-social><a href="[LIEN_FACEBOOK]" target="_blank" rel="noopener" aria-label="Facebook"><i
-              class="fa-brands fa-facebook-f" aria-hidden="true"></i></a></li>
-        <li data-social><a href="[LIEN_TIKTOK]" target="_blank" rel="noopener" aria-label="TikTok"><i
-              class="fa-brands fa-tiktok" aria-hidden="true"></i></a></li>
-        <li data-social><a href="[LIEN_LINKEDIN]" target="_blank" rel="noopener" aria-label="LinkedIn"><i
-              class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a></li>
-        <li data-social><a href="[LIEN_CHAÎNE_WHATSAPP]" target="_blank" rel="noopener" aria-label="Chaîne WhatsApp"><i
-              class="fa-brands fa-whatsapp" aria-hidden="true"></i></a></li>
-      </ul>
+      <nav class="footer-nav" aria-label="Liens rapides du pied de page">
+        <a href="#services">Services</a>
+        <a href="#pourquoi">Pourquoi Glora</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-    <div class="container footer-legal">© <span id="year">2026</span> Glora. Tous droits réservés.</div>
+
+    <div class="container footer-bottom">
+      <p>&copy; <span id="year">2026</span> Glora. Tous droits réservés.</p>
+      <a class="back-to-top" href="#accueil" aria-label="Remonter en haut de la page">
+        <span>Haut de page</span>
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+      </a>
+    </div>
   </footer>
+
+  <!-- Bouton WhatsApp flottant en bas à droite -->
+  <a class="floating-wa"
+    href="https://wa.me/243964385955?text=Bonjour%20Glora%2C%20j%27aimerais%20avoir%20des%20informations%20sur%20vos%20services."
+    target="_blank" rel="noopener" aria-label="Écrire à Glora sur WhatsApp">
+    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    <span class="floating-tooltip">Discuter sur WhatsApp</span>
+  </a>
 
   <script src="script.js"></script>
 </body>

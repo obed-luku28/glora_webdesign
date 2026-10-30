@@ -1,85 +1,124 @@
 /* =========================================================
-   GLORA – Scripts (JavaScript vanille, aucune librairie)
-   1. Menu burger (mobile)
-   2. Lien actif dans le menu selon la section visible
-   3. Apparition au scroll
-   4. Masquer les réseaux non renseignés
-   5. Année du footer
+   GLORA – Scripts (JavaScript vanille natif, aucune dépendance)
+   1. Menu mobile (burger)
+   2. En-tête avec ombre au défilement
+   3. Lien actif dans la navigation (ScrollSpy)
+   4. Apparition progressive des éléments (Scroll Reveal)
+   5. Compteurs animés pour les chiffres clés
+   6. Réalisations : Capture d'écran automatique et redirection
+   7. Accordéon FAQ accessible
+   8. Année dynamique du pied de page
    ========================================================= */
 
 (function () {
   'use strict';
 
-  // Active les styles d'animation uniquement si JavaScript fonctionne
+  // Active les styles avancés uniquement lorsque JavaScript est supporté
   document.documentElement.classList.add('js');
 
-  /* ---------- 1. Menu burger ---------- */
+  /* ---------- 1. Menu mobile (burger) ---------- */
   var burger = document.getElementById('burger');
   var menu = document.getElementById('menu');
 
   function setMenu(open) {
+    if (!menu || !burger) return;
     menu.classList.toggle('is-open', open);
     burger.setAttribute('aria-expanded', String(open));
     burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
   }
 
-  burger.addEventListener('click', function () {
-    setMenu(burger.getAttribute('aria-expanded') !== 'true');
-  });
+  if (burger && menu) {
+    burger.addEventListener('click', function () {
+      var isOpen = burger.getAttribute('aria-expanded') === 'true';
+      setMenu(!isOpen);
+    });
 
-  // Ferme le menu après un clic sur un lien
-  menu.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', function () { setMenu(false); });
-  });
+    // Ferme le menu après un clic sur un lien interne
+    menu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        setMenu(false);
+      });
+    });
 
-  // Ferme le menu avec Échap
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') setMenu(false);
-  });
+    // Ferme le menu avec la touche Échap
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') setMenu(false);
+    });
 
-  // Ferme le menu si on passe en affichage PC
-  window.matchMedia('(min-width: 768px)').addEventListener('change', function (e) {
-    if (e.matches) setMenu(false);
-  });
+    // Ferme le menu lors du passage en affichage tablette/PC
+    window.matchMedia('(min-width: 860px)').addEventListener('change', function (e) {
+      if (e.matches) setMenu(false);
+    });
+  }
 
-  /* ---------- 2. Lien actif ---------- */
-  var navLinks = Array.prototype.slice.call(menu.querySelectorAll('.nav-link'));
+  /* ---------- 2. En-tête avec ombre au défilement ---------- */
+  var header = document.getElementById('header');
+
+  function updateHeaderScroll() {
+    if (!header) return;
+    if (window.scrollY > 20) {
+      header.classList.add('is-scrolled');
+    } else {
+      header.classList.remove('is-scrolled');
+    }
+  }
+
+  window.addEventListener('scroll', updateHeaderScroll, { passive: true });
+  updateHeaderScroll();
+
+  /* ---------- 3. Lien actif dans la navigation (ScrollSpy) ---------- */
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('#menu .nav-link'));
   var sections = navLinks
-    .map(function (link) { return document.querySelector(link.getAttribute('href')); })
+    .map(function (link) {
+      var targetId = link.getAttribute('href');
+      if (targetId && targetId.startsWith('#')) {
+        return document.querySelector(targetId);
+      }
+      return null;
+    })
     .filter(Boolean);
 
-  function setActive(id) {
+  function setActiveNavLink(id) {
     navLinks.forEach(function (link) {
-      var active = link.getAttribute('href') === '#' + id;
-      link.classList.toggle('is-active', active);
-      if (active) link.setAttribute('aria-current', 'true');
-      else link.removeAttribute('aria-current');
+      var isActive = link.getAttribute('href') === '#' + id;
+      link.classList.toggle('is-active', isActive);
+      if (isActive) {
+        link.setAttribute('aria-current', 'true');
+      } else {
+        link.removeAttribute('aria-current');
+      }
     });
   }
 
-  if ('IntersectionObserver' in window) {
-    var sectionObserver = new IntersectionObserver(function (entries) {
+  if ('IntersectionObserver' in window && sections.length > 0) {
+    var spyObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (entry.isIntersecting) setActive(entry.target.id);
+        if (entry.isIntersecting) {
+          setActiveNavLink(entry.target.id);
+        }
       });
-    }, { rootMargin: '-45% 0px -50% 0px' });
+    }, { rootMargin: '-40% 0px -50% 0px' });
 
-    sections.forEach(function (section) { sectionObserver.observe(section); });
-
-    // Hero ou contact : aucun lien n'est surligné
-    ['accueil', 'contact'].forEach(function (id) {
-      var el = document.getElementById(id);
-      if (!el) return;
-      new IntersectionObserver(function (entries) {
-        if (entries[0].isIntersecting) setActive('');
-      }, { rootMargin: '-45% 0px -50% 0px' }).observe(el);
+    sections.forEach(function (section) {
+      spyObserver.observe(section);
     });
+
+    // Sur la section Hero (accueil) : aucun onglet n'est actif
+    var heroEl = document.getElementById('accueil');
+    if (heroEl) {
+      new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) {
+          setActiveNavLink('');
+        }
+      }, { rootMargin: '-30% 0px -60% 0px' }).observe(heroEl);
+    }
   }
 
-  /* ---------- 3. Apparition au scroll ---------- */
-  var revealItems = document.querySelectorAll('.reveal');
+  /* ---------- 4. Apparition progressive (Scroll Reveal) ---------- */
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revealElements = document.querySelectorAll('.reveal');
 
-  if ('IntersectionObserver' in window) {
+  if (!prefersReducedMotion && 'IntersectionObserver' in window) {
     var revealObserver = new IntersectionObserver(function (entries, observer) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -87,42 +126,85 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1 });
 
-    revealItems.forEach(function (item) { revealObserver.observe(item); });
+    revealElements.forEach(function (el) {
+      revealObserver.observe(el);
+    });
   } else {
-    revealItems.forEach(function (item) { item.classList.add('is-visible'); });
+    revealElements.forEach(function (el) {
+      el.classList.add('is-visible');
+    });
   }
 
-  /* ---------- 4. Réalisations : Capture automatique & redirection ---------- */
+  /* ---------- 5. Compteurs animés pour les chiffres clés ---------- */
+  function animateCounter(counterEl) {
+    var target = parseInt(counterEl.getAttribute('data-target'), 10);
+    if (isNaN(target)) return;
+
+    var duration = 1600; // millisecondes
+    var startTimestamp = null;
+
+    function step(timestamp) {
+      if (!startTimestamp) startTimestamp = timestamp;
+      var progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      // Easing out cubic pour un ralentissement naturel à la fin
+      var easeOutProgress = 1 - Math.pow(1 - progress, 3);
+      var currentVal = Math.floor(easeOutProgress * target);
+      counterEl.textContent = String(currentVal);
+
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        counterEl.textContent = String(target);
+      }
+    }
+
+    window.requestAnimationFrame(step);
+  }
+
+  var counterElements = document.querySelectorAll('.counter');
+  if (counterElements.length > 0) {
+    if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+      var counterObserver = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+
+      counterElements.forEach(function (el) {
+        counterObserver.observe(el);
+      });
+    } else {
+      counterElements.forEach(function (el) {
+        el.textContent = el.getAttribute('data-target') || '0';
+      });
+    }
+  }
+
+  /* ---------- 6. Réalisations : Capture d'écran automatique ---------- */
   function initProjectScreenshots() {
-    var projects = document.querySelectorAll('.project');
+    var projects = document.querySelectorAll('.project[data-url]');
 
     projects.forEach(function (project) {
-      var overlayEl = project.querySelector('.project-overlay');
-      var rawUrl = project.getAttribute('data-url') || (overlayEl ? overlayEl.getAttribute('href') : '');
+      var rawUrl = project.getAttribute('data-url');
       if (!rawUrl) return;
 
-      // S'assure que l'URL a bien son protocole https://
       var siteUrl = rawUrl.trim();
       if (!/^https?:\/\//i.test(siteUrl)) {
         siteUrl = 'https://' + siteUrl;
         project.setAttribute('data-url', siteUrl);
       }
 
-      // Récupération ou création du conteneur média
       var media = project.querySelector('.project-media');
-      if (!media) {
-        media = document.createElement('div');
-        media.className = 'project-media';
-        project.insertBefore(media, project.firstChild);
-      }
+      if (!media) return;
 
-      // Récupération du titre du projet pour l'accessibilité
       var titleEl = project.querySelector('strong');
       var projectName = titleEl ? titleEl.textContent.trim() : 'Projet';
 
-      // Récupération ou création de l'image de couverture
       var img = media.querySelector('img');
       if (!img) {
         img = document.createElement('img');
@@ -131,68 +213,58 @@
         media.appendChild(img);
       }
 
-      // URLs de génération automatique de capture d'écran
-      // 1. WordPress mShots (gratuit, rapide, sans clé API)
+      // 1. Service principal gratuit WordPress mShots
       var mshotsUrl = 'https://s0.wp.com/mshots/v1/' + encodeURIComponent(siteUrl) + '?w=900';
-      // 2. Microlink en secours
+      // 2. Service de secours Microlink
       var fallbackUrl = 'https://api.microlink.io/?url=' + encodeURIComponent(siteUrl) + '&screenshot=true&meta=false&embed=screenshot.url';
 
-      var currentSrc = img.getAttribute('src') || '';
-      var needsAutoScreenshot = !currentSrc || currentSrc.indexOf('picsum.photos') !== -1 || img.dataset.auto === 'true';
+      media.classList.add('is-loading');
 
-      if (needsAutoScreenshot) {
-        media.classList.add('is-loading');
-
-        var tempImg = new Image();
-        tempImg.onload = function () {
-          img.src = tempImg.src;
+      var tempImg = new Image();
+      tempImg.onload = function () {
+        img.src = tempImg.src;
+        media.classList.remove('is-loading');
+      };
+      tempImg.onerror = function () {
+        if (tempImg.src !== fallbackUrl) {
+          tempImg.src = fallbackUrl;
+        } else {
           media.classList.remove('is-loading');
-        };
-        tempImg.onerror = function () {
-          // Essai avec le service de secours
-          if (tempImg.src !== fallbackUrl) {
-            tempImg.src = fallbackUrl;
-          } else {
-            media.classList.remove('is-loading');
-          }
-        };
-        tempImg.src = mshotsUrl;
-      }
+        }
+      };
+      tempImg.src = mshotsUrl;
 
-      // Création / mise à jour du lien de redirection au clic sur l'icône Font Awesome
+      // Lien overlay "Voir le projet"
       var overlay = media.querySelector('.project-overlay');
-      if (!overlay) {
-        overlay = document.createElement('a');
-        overlay.className = 'project-overlay';
-        overlay.innerHTML = '<span class="project-icon-badge" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>';
-        media.appendChild(overlay);
+      if (overlay) {
+        overlay.href = siteUrl;
+        overlay.target = '_blank';
+        overlay.rel = 'noopener noreferrer';
       }
-
-      overlay.href = siteUrl;
-      overlay.target = '_blank';
-      overlay.rel = 'noopener noreferrer';
-      overlay.setAttribute('aria-label', 'Visiter le site ' + projectName + ' (s\'ouvre dans un nouvel onglet)');
     });
   }
 
   initProjectScreenshots();
 
-  /* ---------- 5. Réseaux non renseignés ---------- */
-  // Un lien qui contient encore des crochets [LIEN_...] est considéré comme vide.
-  document.querySelectorAll('[data-social]').forEach(function (item) {
-    var link = item.querySelector('a');
-    if (link && link.getAttribute('href').indexOf('[') !== -1) {
-      item.hidden = true;
-    }
+  /* ---------- 7. Accordéon FAQ accessible ---------- */
+  // Ferme automatiquement les autres questions lorsqu'une question est ouverte
+  var faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(function (item) {
+    item.addEventListener('toggle', function () {
+      if (item.open) {
+        faqItems.forEach(function (otherItem) {
+          if (otherItem !== item && otherItem.open) {
+            otherItem.open = false;
+          }
+        });
+      }
+    });
   });
 
-  // Masque la liste entière si aucun réseau n'est renseigné
-  document.querySelectorAll('[data-socials]').forEach(function (list) {
-    var visible = list.querySelectorAll('[data-social]:not([hidden])').length;
-    if (visible === 0) list.hidden = true;
-  });
+  /* ---------- 8. Année dynamique du pied de page ---------- */
+  var yearEl = document.getElementById('year');
+  if (yearEl) {
+    yearEl.textContent = String(new Date().getFullYear());
+  }
 
-  /* ---------- 6. Année du footer ---------- */
-  var year = document.getElementById('year');
-  if (year) year.textContent = new Date().getFullYear();
 })();
